@@ -11,24 +11,19 @@ public class fruitInBassket {
         int j=0;
         int maxCount =0;
         while(i<fruits.length-1){
-//            if(fruits.length==3) System.out.println(3);
-//            else {
-
                 map.put(fruits[i], map.getOrDefault(fruits[i], 0) + 1);
                 while(map.size() > 2) {
-//                    if (j == -1) j++;
-
                     map.put(fruits[j], map.get(fruits[j]) - 1);
                     if (map.get(fruits[j]) == 0) {
                         map.remove(fruits[j]);
                     }
-                    j+=1;
+                    else {
+                        j += 1;
+                    }
                 }
                 maxCount = Math.max(maxCount, i-j +1);
-//            }
-            i++;
+                i++;
         }
-//        maxCount = Math.max(maxCount, i-j);
         System.out.println(maxCount);
 
     }
